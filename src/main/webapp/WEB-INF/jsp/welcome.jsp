@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>صفحه اصلي </title>
 
-    <link rel= "stylesheet" type="text/css" href="./assets/semantic/semantic.rtl.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/site.css">
-    <link rel="stylesheet" type="text/css" href="./css/home.css">
-    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel= "stylesheet" type="text/css" href="../../resources/assets/semantic/semantic.rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/assets/css/site.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/home.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/common.css">
 
-    <script type="text/javascript" src="./assets/js/jquery-2.2.2.min.js"></script>
-    <script type="text/javascript" src="./assets/semantic/semantic.min.js"></script>
-    <script type="text/javascript" src="./assets/js/site.js"></script>	
+    <script type="text/javascript" src="../../resources/assets/js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="../../resources/assets/semantic/semantic.min.js"></script>
+    <script type="text/javascript" src="../../resources/assets/js/site.js"></script>	
 </head>
 <body >
 <header class="header">
@@ -31,8 +31,8 @@
 
 		<div class="three column row" >
                     <div class="four wide orange column style-mainMenuL ">
-                           <img src="img/manager-ico.png" />
-                            <p>${pageContext.request.contextPath}</p>
+                           <img src="${pageContext.request.contextPath}/resources/img/manager-ico.png" />
+                            <p>مدیرگروه</p>
 				<div>
                                     <a>    
                                         <button  class="ui button">
@@ -43,7 +43,7 @@
 			</div>
 			
 			<div class="four wide  yellow column style-mainMenuR" >
-			<img src="/img/prof-ico.png"/>
+			<img src="../../resources/img/prof-ico.png"/>
 			   <p>استاد</p>
 			   <div>
                                <a>
@@ -55,7 +55,7 @@
 			</div>
 			
 			<div class="four wide olive column style-mainMenuR" >
-                            <img src="img/stu-ico.png"/>
+                            <img src="../../resources/img/stu-ico.png"/>
                             <p>دانشجو</p>
                                 <div>
                                     <a>
