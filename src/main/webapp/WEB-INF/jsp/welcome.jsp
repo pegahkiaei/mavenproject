@@ -31,8 +31,8 @@
 
 		<div class="three column row" >
                     <div class="four wide orange column style-mainMenuL ">
-                           <img src="../../resources/img/manager-ico.png" />
-                            <p>${pageContext.request.contextPath}</p>
+                           <img src="${pageContext.request.contextPath}/resources/img/manager-ico.png" />
+                            <p>مدیرگروه</p>
 				<div>
                                     <a>    
                                         <button  class="ui button">

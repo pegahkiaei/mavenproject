@@ -1,0 +1,51 @@
+/* important styles below */
+@media (max-width:700px) {
+    table {
+        width: 100%;
+        height: 100%;
+    }
+
+    .scrollable {
+        float: none;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: scroll;
+    }
+
+
+
+}
+#main_scores_div {
+    min-height: 714px;
+}
+.sticky_score_div{
+    left: 1px;
+    top:2px;
+    width: 100px ! important;
+    margin-top: 30px;
+}
+.style-hidden-as-results{
+    display: none;
+}
+.style-row{
+    height: 50%;
+    width: 160% !important;
+}
+.last.container{
+     margin-bottom: 300px !important;
+ }
+h1.ui.center.header {
+    margin-top: 3em;
+}
+h2.ui.center.header {
+    margin: 4em 0em 2em;
+}
+h3.ui.center.header {
+    margin-top: 2em;
+    padding: 2em 0em;
+}
+
+
+
+
