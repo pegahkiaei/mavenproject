@@ -24,12 +24,14 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @Basic(optional = false)
+    @GeneratedValue
     @Column(name = "ID")
     private Integer id;
+
     @Basic(optional = false)
     @Column(name = "USERNAME")
     private String username;
+
     @Basic(optional = false)
     @Column(name = "NAME")
     private String name;
@@ -46,6 +48,7 @@ public class User implements Serializable {
         this.username = username;
         this.name = name;
     }
+
 
     public Integer getId() {
         return id;
@@ -85,7 +88,7 @@ public class User implements Serializable {
             return false;
         }
         User other = (User) object;
-        if((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
