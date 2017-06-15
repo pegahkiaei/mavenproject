@@ -6,17 +6,10 @@
 package com.sbu.dao.model;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -26,156 +19,73 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Pegah
  */
 @Entity
-@Table(name = "DEPT", catalog = "NEET", schema = "PUBLIC")
+@Table(name = "DEPT")
 @XmlRootElement
-@NamedQueries({
+@NamedQueries({//TODO:named query
     @NamedQuery(name = "Dept.findAll", query = "SELECT d FROM Dept d")
-    , @NamedQuery(name = "Dept.findByDid", query = "SELECT d FROM Dept d WHERE d.did = :did")
-    , @NamedQuery(name = "Dept.findByPid", query = "SELECT d FROM Dept d WHERE d.pid = :pid")
+    , @NamedQuery(name = "Dept.findByDid", query = "SELECT d FROM Dept d WHERE d.id = :did")
     , @NamedQuery(name = "Dept.findByName", query = "SELECT d FROM Dept d WHERE d.name = :name")
     , @NamedQuery(name = "Dept.findByUname", query = "SELECT d FROM Dept d WHERE d.uname = :uname")
-    , @NamedQuery(name = "Dept.findByPasswoed", query = "SELECT d FROM Dept d WHERE d.passwoed = :passwoed")})
+    , @NamedQuery(name = "Dept.findByPasswoed", query = "SELECT d FROM Dept d WHERE d.password = :passwoed")})
 public class Dept implements Serializable {
 
+    //----------------------------------------------------------columns
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "DID", nullable = false)
-    private Integer did;
-    
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "PID", nullable = false, columnDefinition="default '1'")
-    private int pid;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
-    @Column(name = "NAME", nullable = false, length = 50, columnDefinition="default 'a'")
+    @GeneratedValue(strategy = GenerationType.AUTO)//TODO:age ghararedasti generate konim bayad set beshe
+    @Column(name = "depId", nullable = false)
+    private Integer id;
+
+    @Column(name = "name", nullable = false, length = 50)
     private String name;
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
-    @Column(name = "UNAME", nullable = false, length = 50, columnDefinition="default 'a'")
+    @Column(name = "uname",unique = true, nullable = false, length = 50)
     private String uname;
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
-    @Column(name = "PASSWOED", nullable = false, length = 50, columnDefinition="default 'a'")
-    private String passwoed;
-    
-//    @JoinColumn(name = "DID", referencedColumnName = "DEPID", nullable = false, insertable = false, updatable = false)
-//    @OneToOne(optional = false)
-//    private Cot cot;
-    
-    @JoinColumn(name = "DID", referencedColumnName = "DID", nullable = false, insertable = false, updatable = false)
-    @OneToOne(optional = false)
-    private Prof prof;
-    
-//    @JoinColumn(name = "DID", referencedColumnName = "MAJOR", nullable = false, insertable = false, updatable = false)
-//    @OneToOne(optional = false)
-//    private Stt stt;
-    
-//    @JoinColumn(name = "DID", referencedColumnName = "MAJORID", nullable = false, insertable = false, updatable = false)
-//    @OneToOne(optional = false)
-//    private Submajor submajor;
+    @Column(name = "pass", nullable = false, length = 50)
+    private String password;
 
+
+    //-------------------------------------------------------------relations
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", orphanRemoval = true)
+    private List<Stt> students = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", orphanRemoval = true)
+    private List<Prof> professors = new ArrayList<>();
+
+    @OneToOne
+    @JoinColumn(name="managerId")
+    private Prof manager;
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "courseDept")
+    private Set<Cot> deptCourses;
+
+
+
+    //--------------------------------------------------------------constructors
     public Dept() {
     }
-
     public Dept(Integer did) {
-        this.did = did;
+        this.id = did;
     }
-
-    public Dept(Integer did, int pid, String name, String uname, String passwoed) {
-        this.did = did;
-        this.pid = pid;
+    public Dept(Integer did, String name, String uname, String password) {
+        this.id = did;
         this.name = name;
         this.uname = uname;
-        this.passwoed = passwoed;
+        this.password = password;
     }
 
-    public Integer getDid() {
-        return did;
-    }
+    //---------------------------------------------------------setters ansd getters
 
-    public void setDid(Integer did) {
-        this.did = did;
-    }
-
-    public int getPid() {
-        return pid;
-    }
-
-    public void setPid(int pid) {
-        this.pid = pid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getUname() {
-        return uname;
-    }
-
-    public void setUname(String uname) {
-        this.uname = uname;
-    }
-
-    public String getPasswoed() {
-        return passwoed;
-    }
-
-    public void setPasswoed(String passwoed) {
-        this.passwoed = passwoed;
-    }
-
-//    public Cot getCot() {
-//        return cot;
-//    }
-
-//    public void setCot(Cot cot) {
-//        this.cot = cot;
-//    }
-
-    public Prof getProf() {
-        return prof;
-    }
-
-    public void setProf(Prof prof) {
-        this.prof = prof;
-    }
-
-//    public Stt getStt() {
-//        return stt;
-//    }
-
-//    public void setStt(Stt stt) {
-//        this.stt = stt;
-//    }
-
-//    public Submajor getSubmajor() {
-//        return submajor;
-//    }
-
-//    public void setSubmajor(Submajor submajor) {
-//        this.submajor = submajor;
-//    }
-
+    //-----------------------------------------------------------Overrides
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (did != null ? did.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
-
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
@@ -183,15 +93,14 @@ public class Dept implements Serializable {
             return false;
         }
         Dept other = (Dept) object;
-        if ((this.did == null && other.did != null) || (this.did != null && !this.did.equals(other.did))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
     }
-
     @Override
     public String toString() {
-        return "com.sbu.dao.model.Dept[ did=" + did + " ]";
+        return "com.sbu.dao.model.Dept[ id=" + id + " ]";
     }
     
 }

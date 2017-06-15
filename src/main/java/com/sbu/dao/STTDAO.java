@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface STTDAO {
 
-	void insertUser(Stt user);
+	boolean insertUser(Stt user);
 
 	List<Stt> findAllUsers();
 }

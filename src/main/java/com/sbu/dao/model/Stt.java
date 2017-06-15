@@ -5,187 +5,119 @@
  */
 package com.sbu.dao.model;
 
+
+import javafx.scene.image.Image;
+
 import java.io.Serializable;
-import java.util.Collection;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.Pattern;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author Pegah
  */
 @Entity
-@Table(name = "STT", catalog = "NEET", schema = "PUBLIC", uniqueConstraints = {
-//    @UniqueConstraint(columnNames = {"MAJOR"})
-//    , @UniqueConstraint(columnNames = {"SUBMAJOR"})
-     @UniqueConstraint(columnNames = {"ID"})})
+@Table(name = "STT")
 @XmlRootElement
-@NamedQueries({
+@NamedQueries({//TODO:named query
     @NamedQuery(name = "Stt.findAll", query = "SELECT s FROM Stt s")
     , @NamedQuery(name = "Stt.findByName", query = "SELECT s FROM Stt s WHERE s.name = :name")
     , @NamedQuery(name = "Stt.findByUname", query = "SELECT s FROM Stt s WHERE s.uname = :uname")
-    , @NamedQuery(name = "Stt.findByPassword", query = "SELECT s FROM Stt s WHERE s.password = :password")
-//    , @NamedQuery(name = "Stt.findByMajor", query = "SELECT s FROM Stt s WHERE s.major = :major")
-//    , @NamedQuery(name = "Stt.findBySubmajor", query = "SELECT s FROM Stt s WHERE s.submajor = :submajor")
     , @NamedQuery(name = "Stt.findById", query = "SELECT s FROM Stt s WHERE s.id = :id")})
 public class Stt implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
-    @Column(name = "NAME", nullable = false, length = 50, columnDefinition="default 'a'")
-    private String name;
-    
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
-    @Column(name = "UNAME", nullable = false, length = 50, columnDefinition="default 'a'")
-    private String uname;
-    
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
-    @Column(name = "PASSWORD", nullable = false, length = 50, columnDefinition="default '1'")
-    private String password;
-    
-//    @Size(max = 50)
-//    @Column(name = "MAJOR", length = 50)
-//    private String major;
-//    
-//    @Basic(optional = false)
-//    @NotNull
-//    @Size(min = 1, max = 50)
-//    @Column(name = "SUBMAJOR", nullable = false, length = 50, columnDefinition="default 'a'")
-//    private String submajor;
-    
+    //--------------------------------------------clumns
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)//TODO: how to gen
+    @Column(name = "studentId", nullable = false)
     private Integer id;
-    
-    
-//    @JoinColumn(name = "ID", referencedColumnName = "STID", nullable = false, insertable = false, updatable = false)
-//    @OneToOne(optional = false)
-//    private Stcot stcot;
-//    
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "stt")
-//    private Collection<Submajor> submajorCollection;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "stt")
-    private Dept dept;
 
+    @Basic(optional = false)
+    @Column(name = "name", nullable = false, length = 50)
+    private String name;
+
+
+    @Column(name = "uname",unique = true, nullable = false, length = 50)
+    private String uname;
+
+    @Column(name = "pass", nullable = false, length = 50)
+    private String password;
+
+    @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "email", nullable = false, length = 50)
+    private String email;
+
+    @Lob
+    private Serializable photo;
+
+    //-----------------------------------------------relations
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Dept department;
+
+    //stcot!
+    @OneToMany(mappedBy = "course")
+    private List<StCot> courses = new ArrayList<StCot>();
+
+
+
+
+    //--------------------------------------------constructor
     public Stt() {
-    }
 
+    }
+    public Stt(String uname, String pass) {
+        this.setUname(uname);
+        this.setPassword(pass);
+    }
     public Stt(Integer id) {
         this.id = id;
     }
-
     public Stt(Integer id, String name, String uname, String password) {
         this.id = id;
         this.name = name;
         this.uname = uname;
         this.password = password;
-//        this.submajor = submajor;
     }
 
+    //-------------------------------------------------getterSetters
+    //TODO:getter-setter
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getUname() {
         return uname;
     }
-
     public void setUname(String uname) {
         this.uname = uname;
     }
-
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
 
-//    public String getMajor() {
-//        return major;
-//    }
-//
-//    public void setMajor(String major) {
-//        this.major = major;
-//    }
-//
-//    public String getSubmajor() {
-//        return submajor;
-//    }
-//
-//    public void setSubmajor(String submajor) {
-//        this.submajor = submajor;
-//    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-//    public Stcot getStcot() {
-//        return stcot;
-//    }
-
-//    public void setStcot(Stcot stcot) {
-//        this.stcot = stcot;
-//    }
-
-//    @XmlTransient
-//    public Collection<Submajor> getSubmajorCollection() {
-//        return submajorCollection;
-//    }
-
-//    public void setSubmajorCollection(Collection<Submajor> submajorCollection) {
-//        this.submajorCollection = submajorCollection;
-//    }
-
-    public Dept getDept() {
-        return dept;
-    }
-
-    public void setDept(Dept dept) {
-        this.dept = dept;
-    }
-
+    //--------------------------------------------Overrides
     @Override
     public int hashCode() {
         int hash = 0;
         hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
-
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
@@ -198,10 +130,14 @@ public class Stt implements Serializable {
         }
         return true;
     }
-
     @Override
     public String toString() {
-        return "com.sbu.dao.model.Stt[ id=" + id + " ]";
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString()).append(": ");
+        sb.append("uname: ").append(this.uname).append("; ");
+        sb.append("pass: [PROTECTED]; ");
+
+        return sb.toString();
     }
     
 }
