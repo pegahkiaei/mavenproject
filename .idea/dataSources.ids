@@ -27,12 +27,6 @@
       <index name="UK_6S9OUQ21RSW7AGVVGK3Q483WJ_INDEX_1" unique="true" columns="UNAME"/>
       <index name="FK1FAFU3HWQ4J3JSN4W815V7OCJ_INDEX_1" unique="false" columns="MANAGERID"/>
     </table>
-    <table name="PEGAH" schema="PUBLIC" catalog="DB" type="TABLE">
-      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="USERNAME" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="CONSTRAINT_4" columns="ID"/>
-    </table>
     <table name="PROF" schema="PUBLIC" catalog="DB" type="TABLE">
       <column name="PROFID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="EMAIL" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
@@ -73,8 +67,11 @@
       <column name="COID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="CGID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="TERM" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="COURSEPROFESSOR_PROFID" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="CONSTRAINT_D" columns="COID,CGID,TERM"/>
       <foreign-key name="FKOHR25MY15Q58JKIK61O0T2W9B" columns="COID" ref-table="COT" ref-schema="PUBLIC" ref-catalog="DB" ref-columns="COID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FK5CLR02O6G8II052R8JE291VDT" columns="COURSEPROFESSOR_PROFID" ref-table="PROF" ref-schema="PUBLIC" ref-catalog="DB" ref-columns="PROFID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <index name="FK5CLR02O6G8II052R8JE291VDT_INDEX_D" unique="false" columns="COURSEPROFESSOR_PROFID"/>
     </table>
     <table name="USER" schema="PUBLIC" catalog="DB" type="TABLE">
       <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
