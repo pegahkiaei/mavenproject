@@ -6,6 +6,15 @@
     </database-info>
     <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
     <schema name="PUBLIC" catalog="DB"/>
+    <table name="COMAJT" schema="PUBLIC" catalog="DB" type="TABLE">
+      <column name="COID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="FILTERID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="SUBMAJID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="CONSTRAINT_7" columns="COID,FILTERID,SUBMAJID"/>
+      <foreign-key name="FKBVUIE15AR1XHAUHKKQEEI5YUK" columns="COID" ref-table="COT" ref-schema="PUBLIC" ref-catalog="DB" ref-columns="COID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FKCC8L8GP9Q2J286K3EHLSLM5R0" columns="SUBMAJID" ref-table="SUBMAJT" ref-schema="PUBLIC" ref-catalog="DB" ref-columns="SUBMAJID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <index name="FKCC8L8GP9Q2J286K3EHLSLM5R0_INDEX_7" unique="false" columns="SUBMAJID"/>
+    </table>
     <table name="COT" schema="PUBLIC" catalog="DB" type="TABLE">
       <column name="COID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="CREDIT" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
@@ -26,6 +35,20 @@
       <foreign-key name="FK1FAFU3HWQ4J3JSN4W815V7OCJ" columns="MANAGERID" ref-table="PROF" ref-schema="PUBLIC" ref-catalog="DB" ref-columns="PROFID" update-rule="1" delete-rule="1" deferrability="2"/>
       <index name="UK_6S9OUQ21RSW7AGVVGK3Q483WJ_INDEX_1" unique="true" columns="UNAME"/>
       <index name="FK1FAFU3HWQ4J3JSN4W815V7OCJ_INDEX_1" unique="false" columns="MANAGERID"/>
+    </table>
+    <table name="PEGAH" schema="PUBLIC" catalog="DB" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="USERNAME" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="CONSTRAINT_4" columns="ID"/>
+    </table>
+    <table name="PRECOT" schema="PUBLIC" catalog="DB" type="TABLE">
+      <column name="MAINCOID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="PRECOID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="FKEFWTLKERR826DCHFIONXVVPFV" columns="PRECOID" ref-table="COT" ref-schema="PUBLIC" ref-catalog="DB" ref-columns="COID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FKOOFPDKXNY2R88JHIWC15XMD29" columns="MAINCOID" ref-table="COT" ref-schema="PUBLIC" ref-catalog="DB" ref-columns="COID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <index name="FKEFWTLKERR826DCHFIONXVVPFV_INDEX_8" unique="false" columns="PRECOID"/>
+      <index name="FKOOFPDKXNY2R88JHIWC15XMD29_INDEX_8" unique="false" columns="MAINCOID"/>
     </table>
     <table name="PROF" schema="PUBLIC" catalog="DB" type="TABLE">
       <column name="PROFID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
@@ -58,10 +81,21 @@
       <column name="PHOTO" sqlType="BLOB" precision="2147483647" scale="0" nullable="true" jdbcType="2004"/>
       <column name="UNAME" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="DEPARTMENT_DEPID" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="SUBMAJID" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="CONSTRAINT_14" columns="STUDENTID"/>
       <foreign-key name="FKHV9NK2OCSFP3V6B005W0D45US" columns="DEPARTMENT_DEPID" ref-table="DEPT" ref-schema="PUBLIC" ref-catalog="DB" ref-columns="DEPID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FKRSI958K6PGJV7L9OTMHGYIGVG" columns="SUBMAJID" ref-table="SUBMAJT" ref-schema="PUBLIC" ref-catalog="DB" ref-columns="SUBMAJID" update-rule="1" delete-rule="1" deferrability="2"/>
       <index name="UK_6TO1COWLUW9SRULE8QXTX0S5H_INDEX_1" unique="true" columns="UNAME"/>
       <index name="FKHV9NK2OCSFP3V6B005W0D45US_INDEX_1" unique="false" columns="DEPARTMENT_DEPID"/>
+      <index name="FKRSI958K6PGJV7L9OTMHGYIGVG_INDEX_1" unique="false" columns="SUBMAJID"/>
+    </table>
+    <table name="SUBMAJT" schema="PUBLIC" catalog="DB" type="TABLE">
+      <column name="SUBMAJID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="DEPID" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="CONSTRAINT_B" columns="SUBMAJID"/>
+      <foreign-key name="FK2V9CHM5Y0E598E66U5ELN2BDL" columns="DEPID" ref-table="DEPT" ref-schema="PUBLIC" ref-catalog="DB" ref-columns="DEPID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <index name="FK2V9CHM5Y0E598E66U5ELN2BDL_INDEX_B" unique="false" columns="DEPID"/>
     </table>
     <table name="TERMCOT" schema="PUBLIC" catalog="DB" type="TABLE">
       <column name="COID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>

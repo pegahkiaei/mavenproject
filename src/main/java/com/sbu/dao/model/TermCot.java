@@ -13,7 +13,7 @@ public class TermCot implements Serializable {
     private PKTermCot id;
 
 
-    //filterId
+    //TODO:filterId
     //--------------------------------------------------relations
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -43,6 +43,30 @@ public class TermCot implements Serializable {
     }
 
     //-------------------------------------------------getterSetters
+
+    public PKTermCot getId() {
+        return id;
+    }
+
+    public void setId(PKTermCot id) {
+        this.id = id;
+    }
+
+    public Prof getCourseProfessor() {
+        return courseProfessor;
+    }
+
+    public void setCourseProfessor(Prof courseProfessor) {
+        this.courseProfessor = courseProfessor;
+    }
+
+    public Cot getTermCourse() {
+        return termCourse;
+    }
+
+    public void setTermCourse(Cot termCourse) {
+        this.termCourse = termCourse;
+    }
     //TODO:getter-setter
     //-------------------------------------------------Overrides
 

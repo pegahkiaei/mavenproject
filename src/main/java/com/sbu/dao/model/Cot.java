@@ -46,6 +46,17 @@ public class Cot implements Serializable {
     @OneToMany(mappedBy = "termCourse")
     private List<TermCot> termsCourses = new ArrayList<TermCot>();
 
+    //coursePreCourse(each course has some preCourses and each course can be the preCourse of some Courses!!!!)
+    @ManyToMany(mappedBy = "preRequisiteCourses")//in dar pishniyaze che darsaeiye
+    private List<Cot> preRequisiteCourseFor = new ArrayList<Cot>();
+
+    @ManyToMany
+            @JoinTable(name="PreCot",
+                    joinColumns=@JoinColumn(name="maincoId",referencedColumnName="coId"),
+                    inverseJoinColumns=@JoinColumn(name="preCoId", referencedColumnName="coId"))//in dars che pishniyazaei dare
+    private List<Cot> preRequisiteCourses = new ArrayList<Cot>();
+
+
     //-------------------------------------------------Constructors
 
     public Cot(){
@@ -55,7 +66,79 @@ public class Cot implements Serializable {
     }
 
     //-------------------------------------------------getterSetters
-    //TODO:getter-setter
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getCredit() {
+        return credit;
+    }
+
+    public void setCredit(int credit) {
+        this.credit = credit;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Dept getCourseDept() {
+        return courseDept;
+    }
+
+    public void setCourseDept(Dept courseDept) {
+        this.courseDept = courseDept;
+    }
+
+    public List<StCot> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<StCot> students) {
+        this.students = students;
+    }
+
+    public List<TermCot> getTermsCourses() {
+        return termsCourses;
+    }
+
+    public void setTermsCourses(List<TermCot> termsCourses) {
+        this.termsCourses = termsCourses;
+    }
+
+    public List<Cot> getPreRequisiteCourseFor() {
+        return preRequisiteCourseFor;
+    }
+
+    public void setPreRequisiteCourseFor(List<Cot> preRequisiteCourseFor) {
+        this.preRequisiteCourseFor = preRequisiteCourseFor;
+    }
+
+    public List<Cot> getPreRequisiteCourses() {
+        return preRequisiteCourses;
+    }
+
+    public void setPreRequisiteCourses(List<Cot> preRequisiteCourses) {
+        this.preRequisiteCourses = preRequisiteCourses;
+    }
+
     //-------------------------------------------------Overrides
     @Override
     public int hashCode() {
