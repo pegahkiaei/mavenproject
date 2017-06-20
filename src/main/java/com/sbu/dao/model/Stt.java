@@ -63,7 +63,9 @@ public class Stt implements Serializable {
     @OneToMany(mappedBy = "course")
     private List<StCot> courses = new ArrayList<StCot>();
 
-
+    @ManyToOne
+    @JoinColumn(name = "submajId")
+    private SubMajt submajour;
 
 
     //--------------------------------------------constructor
@@ -85,7 +87,7 @@ public class Stt implements Serializable {
     }
 
     //-------------------------------------------------getterSetters
-    //TODO:getter-setter
+
     public Integer getId() {
         return id;
     }
@@ -109,6 +111,46 @@ public class Stt implements Serializable {
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Serializable getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Serializable photo) {
+        this.photo = photo;
+    }
+
+    public Dept getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Dept department) {
+        this.department = department;
+    }
+
+    public List<StCot> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<StCot> courses) {
+        this.courses = courses;
+    }
+
+    public SubMajt getSubmajour() {
+        return submajour;
+    }
+
+    public void setSubmajour(SubMajt submajour) {
+        this.submajour = submajour;
     }
 
     //--------------------------------------------Overrides

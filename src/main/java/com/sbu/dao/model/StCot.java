@@ -43,7 +43,47 @@ public class StCot implements Serializable {
     }
 
     //-------------------------------------------------getterSetters
-    //TODO:getter-setter
+
+    public PKStCot getId() {
+        return id;
+    }
+
+    public void setId(PKStCot id) {
+        this.id = id;
+    }
+
+    public int getTerm() {
+        return term;
+    }
+
+    public void setTerm(int term) {
+        this.term = term;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
+
+    public Stt getStudent() {
+        return student;
+    }
+
+    public void setStudent(Stt student) {
+        this.student = student;
+    }
+
+    public Cot getCourse() {
+        return course;
+    }
+
+    public void setCourse(Cot course) {
+        this.course = course;
+    }
+
     //-------------------------------------------------Overrides
     @Override
     public int hashCode() {

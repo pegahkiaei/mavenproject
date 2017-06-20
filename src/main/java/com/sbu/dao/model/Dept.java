@@ -60,9 +60,11 @@ public class Dept implements Serializable {
     private Prof manager;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "courseDept")
-    private Set<Cot> deptCourses;
+    private List<Cot> deptCourses =  new ArrayList<Cot>();
 
-
+    //submajors
+    @OneToMany(mappedBy = "department")
+    private List<SubMajt> subMajors = new ArrayList<SubMajt>();
 
     //--------------------------------------------------------------constructors
     public Dept() {
@@ -78,6 +80,82 @@ public class Dept implements Serializable {
     }
 
     //---------------------------------------------------------setters ansd getters
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUname() {
+        return uname;
+    }
+
+    public void setUname(String uname) {
+        this.uname = uname;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<Stt> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Stt> students) {
+        this.students = students;
+    }
+
+    public List<Prof> getProfessors() {
+        return professors;
+    }
+
+    public void setProfessors(List<Prof> professors) {
+        this.professors = professors;
+    }
+
+    public Prof getManager() {
+        return manager;
+    }
+
+    public void setManager(Prof manager) {
+        this.manager = manager;
+    }
+
+    public List<Cot> getDeptCourses() {
+        return deptCourses;
+    }
+
+    public void setDeptCourses(List<Cot> deptCourses) {
+        this.deptCourses = deptCourses;
+    }
+
+    public List<SubMajt> getSubMajors() {
+        return subMajors;
+    }
+
+    public void setSubMajors(List<SubMajt> subMajors) {
+        this.subMajors = subMajors;
+    }
 
     //-----------------------------------------------------------Overrides
     @Override

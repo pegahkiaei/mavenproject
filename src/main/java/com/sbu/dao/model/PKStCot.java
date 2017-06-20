@@ -15,7 +15,6 @@ public class PKStCot implements Serializable {
     private Integer course;
 
     @Column(name = "stid")
-
     private Integer student;
 
     public Integer getStudent() {
