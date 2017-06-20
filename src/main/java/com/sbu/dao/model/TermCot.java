@@ -67,7 +67,7 @@ public class TermCot implements Serializable {
     public void setTermCourse(Cot termCourse) {
         this.termCourse = termCourse;
     }
-    //TODO:getter-setter
+
     //-------------------------------------------------Overrides
 
 
