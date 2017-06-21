@@ -6,6 +6,7 @@
 package com.sbu.dao.model;
 
 
+import com.sun.istack.internal.Nullable;
 import javafx.scene.image.Image;
 
 import java.io.Serializable;
@@ -39,15 +40,16 @@ public class Stt implements Serializable {
     @Column(name = "name", nullable = false, length = 50)
     private String name;
 
-
+    @Basic(optional = false)
     @Column(name = "uname",unique = true, nullable = false, length = 50)
     private String uname;
 
+    @Basic(optional = false)
     @Column(name = "pass", nullable = false, length = 50)
     private String password;
 
     @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
-    @Basic(optional = false)
+    @Basic(optional = true)
     @NotNull
     @Column(name = "email", nullable = false, length = 50)
     private String email;
