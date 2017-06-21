@@ -32,7 +32,6 @@ public class SttDAOImpl {
     
     @Transactional
     public Stt getStt(String uname) {
-
         String hql = "SELECT s FROM Stt s WHERE s.uname=:userName";
         Query query = entityManager.createQuery(hql);
         query.setParameter("userName",uname);
@@ -53,5 +52,12 @@ public class SttDAOImpl {
 //        return entityManager.createQuery(cq).getResultList();
 //    }
 
-    
+
+    public EntityManager getEntityManager() {
+        return entityManager;
+    }
+
+    public void setEntityManager(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 }
