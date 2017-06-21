@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("/studentLogin")
 public class StudentController {
@@ -26,14 +28,15 @@ public class StudentController {
     private SttManagerImpl sttManagerImpl;
     
     @RequestMapping(value="/login", method = RequestMethod.POST)
-    public String findStudent(@RequestParam("username") String  usernname , @RequestParam("password") String password ,Model model){
+    public String findStudent(HttpServletRequest request, @RequestParam("username") String  usernname , @RequestParam("password") String password , Model model){
         Stt s = sttManagerImpl.getStudentByUname(usernname,password);
         if(s != null){
-        //TODO:connecting s to service
-             model.addAttribute("name",s.getName());
-             return "student/studentFirstPage";
+            request.getSession().setAttribute("id",s.getId());
+            request.getSession().setAttribute("name",s.getName());
+            request.getSession().setAttribute("type","s");
+            model.addAttribute("name",s.getName());
+            return "student/studentFirstPage";
             //where to set sessions
-
         }
         else
         {

@@ -33,7 +33,7 @@ public class SttManagerImpl implements SttManager{
     @Override
     public Stt getStudentByUname(String uname,String pass) {
         Stt s = sttDAOImpl.getStt(uname);
-      return (s!= null && s.getPassword().equals(pass)?s:null);
+        return (s!= null && s.getPassword().equals(pass)?s:null);
     }
     
 
@@ -42,8 +42,9 @@ public class SttManagerImpl implements SttManager{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     
     }
-    
-    
-    
-    
+
+
+
+
+
 }
