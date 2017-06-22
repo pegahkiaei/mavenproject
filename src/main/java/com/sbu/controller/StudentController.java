@@ -7,16 +7,12 @@ package com.sbu.controller;
 
 import com.sbu.dao.model.Stt;
 import com.sbu.service.impl.SttManagerImpl;
-import org.h2.engine.Session;
-import org.h2.engine.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -44,14 +40,14 @@ public class StudentController {
         }
         
     }
-    
-   @RequestMapping(method = RequestMethod.POST  )
+
+   @RequestMapping(method = RequestMethod.POST )
     public String toLogin(Model model) {
         // Return view welcome. Via resolver the view
-        // will be mapped to /WEB-INF/jsp/welcome.jsp       
+        // will be mapped to /WEB-INF/jsp/welcome.jsp
         return "student/studentLogin";
     }
-//   
+//
 //   @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
 //   public String addStudent(@ModelAttribute("SpringWeb")Student student, Model model) {
 //      model.addAttribute("name", student.getName());

@@ -6,16 +6,15 @@
 package com.sbu.dao.model;
 
 
-import com.sun.istack.internal.Nullable;
-import javafx.scene.image.Image;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+
 
 /**
  *
