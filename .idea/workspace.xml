@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="088f86bd-3550-4eb4-bbd2-81d85712c4bc" name="Default" comment="wednesday5:28-pegah-login">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/controller/filter/StudentLoginFilter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/classes/com/sbu/controller/StudentController.class" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/classes/com/sbu/controller/StudentController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/classes/com/sbu/dao/model/Stt.class" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/classes/com/sbu/dao/model/Stt.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/classes/com/sbu/service/impl/SttManagerImpl.class" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/classes/com/sbu/service/impl/SttManagerImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/sbu/controller/StudentController.class" afterPath="$PROJECT_DIR$/target/classes/com/sbu/controller/StudentController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/sbu/dao/model/Stt.class" afterPath="$PROJECT_DIR$/target/classes/com/sbu/dao/model/Stt.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/sbu/service/impl/SttManagerImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/sbu/service/impl/SttManagerImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MVCSBU.iml" afterPath="$PROJECT_DIR$/MVCSBU.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/controller/StudentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/controller/StudentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/dao/model/Stt.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/dao/model/Stt.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
@@ -124,8 +123,8 @@
       <file leaf-file-name="welcome.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/welcome.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="58" column="71" lean-forward="false" selection-start-line="58" selection-start-column="64" selection-end-line="58" selection-end-column="76" />
+            <state relative-caret-position="356">
+              <caret line="68" column="14" lean-forward="true" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -1354,7 +1353,7 @@
       <workItem from="1498040899441" duration="184000" />
       <workItem from="1498041107340" duration="7315000" />
       <workItem from="1498137350190" duration="470000" />
-      <workItem from="1498137869709" duration="9242000" />
+      <workItem from="1498137869709" duration="9302000" />
     </task>
     <task id="LOCAL-00001" summary="tursday4:55">
       <created>1497961817441</created>
@@ -1377,11 +1376,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497962489337</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="wednesday5:28-pegah-login">
+      <created>1498147520612</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1498147520612</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126053000" />
+    <option name="totallyTimeSpent" value="126113000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1417,8 +1423,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19476268" sideWeight="0.82375187" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19476268" sideWeight="0.82375187" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39130434" sideWeight="0.8388805" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.003220612" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2245827" sideWeight="0.43961352" order="4" side_tool="true" content_ui="tabs" />
@@ -1801,8 +1807,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/welcome.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="58" column="71" lean-forward="false" selection-start-line="58" selection-start-column="64" selection-end-line="58" selection-end-column="76" />
+        <state relative-caret-position="356">
+          <caret line="68" column="14" lean-forward="true" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
           <folding />
         </state>
       </provider>
