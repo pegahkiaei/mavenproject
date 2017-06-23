@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.transaction.*;
 
 @Controller
 @RequestMapping("/themanagers")
@@ -48,7 +49,7 @@ public class ManagerController {
     }
 
     @RequestMapping(value="/infoEdit", method=RequestMethod.POST)
-    public String editManager(HttpServletRequest req, @RequestParam("username") String  usernname , @RequestParam("password") String password , Model model) {
+    public String editManager(HttpServletRequest req, @RequestParam("username") String  usernname , @RequestParam("password") String password , Model model) throws HeuristicRollbackException, HeuristicMixedException, NotSupportedException, RollbackException, SystemException {
         int id= (Integer) req.getSession().getAttribute("id");
 
         boolean isUpdated=managerManagerImpl.updateUserPass(id,usernname,password);

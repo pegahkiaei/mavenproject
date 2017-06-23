@@ -25,21 +25,23 @@ public class TheManagerManagerImpl implements TheManagerManager {
 
     }
     @Override
-    public Boolean updateUserPass(int id, String usernname, String password) {
-        Dept dept=managerDAOImpl.getDept(id); // who is this?
-        Dept possibleDup=managerDAOImpl.getDept(usernname);//maybe this username is taken
-        Dept newDep=null;
-        if(possibleDup==null || (possibleDup!=null && possibleDup.getId()==dept.getId())){//username is not taken
+    public Boolean updateUserPass(int id, String usernname, String password)  {
+        Dept dept = managerDAOImpl.getDept(id); // who is this?
+        Dept possibleDup = managerDAOImpl.getDept(usernname);//maybe this username is taken
+        Dept newDep = null;
+        if (possibleDup == null || (possibleDup != null && possibleDup.getId() == dept.getId())) {//username is not taken
             System.err.println("%%%%%%%%%%%%%%%%%%%%% going to update it!!");
-            newDep=managerDAOImpl.updateDept(dept.getId(),usernname,password);
-            System.err.println("newDep data here            : " + newDep.getId() + "// "+newDep.getUname());
-            Dept newnewDept = managerDAOImpl.getDept(id);
-            if(newnewDept!=null)
-                System.err.println("&& newnewDep data here            : " + newnewDept.getId() + "// "+newnewDept.getUname());
+            dept.setUname(usernname);
+            dept.setPassword(password);
+            managerDAOImpl.updateDept(dept,usernname,password);
+            newDep=managerDAOImpl.getDept(id);
+            System.err.println("newDep data here            : " + newDep.getId() + "// " + newDep.getUname());
         }
-        Boolean isUpdated=(null!=newDep && newDep.getId()==dept.getId());
+
+        Boolean isUpdated = (null != newDep && newDep.getId() == dept.getId());
         return isUpdated;
     }
+
 
 
 //
