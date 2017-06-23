@@ -8,7 +8,6 @@ div.tab {
 /* Style the buttons inside the tab */
 div.tab button {
     background-color: inherit;
-    float: left;
     border: none;
     outline: none;
     cursor: pointer;
@@ -29,29 +28,11 @@ div.tab button.active {
     background-color: #ccc;
 }
 
-.tabHeader{
-	width:100%;
-	overflow:auto;
-	min-height:50px;
-}
-
-.tableR{
-	margin:15px;
-}
-
 /* Style the tab content */
 .tabcontent {
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
-	width:100%;
 	
-}
-.ui.menu{
-	float:right;
-}
-
-.footer {
-
 }
