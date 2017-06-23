@@ -1,4 +1,5 @@
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\UserDAO.java
+C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\impl\TheManagerManagerImpl.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\filter\StudentLoginFilter.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\StudentController.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\impl\UserManagerImpl.java
@@ -8,10 +9,10 @@ C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\ProfMan
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\WelcomeController.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\model\Student.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\Cot.java
+C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\TheManagerManager.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\STTDAO.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\TermCot.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\Stt.java
-C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\ManagerManager.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\ManagerController.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\impl\UserDAOImpl.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\Dept.java
@@ -21,11 +22,12 @@ C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\impl\SttDAO
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\StCot.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\ProfController.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\SttManager.java
+C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\impl\TheManagerDAOImpl.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\PKStCot.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\PKCoMajt.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\User.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\Prof.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\impl\SttManagerImpl.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\CoMajt.java
-C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\impl\ManagerManagerImpl.java
+C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\filter\TheManagersLoginFilter.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\UserInsertController.java

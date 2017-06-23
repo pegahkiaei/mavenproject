@@ -32,7 +32,7 @@
                            <img src="${pageContext.request.contextPath}/resources/img/manager-ico.png" />
                             <p>مدیرگروه</p>
 				<div>
-                                    <form method="post" action="managerLogin">    
+                                    <form method="post" action="themanagers">
                                         <button  class="ui button" type="submit">
 					ورود
                                          </button>
@@ -56,7 +56,7 @@
                             <img src="../../resources/img/stu-ico.png"/>
                             <p>دانشجو</p>
                                 <div>
-                                    <form method="post" action="studentLogin">    
+                                    <form method="post" action="student">
                                         <button  class="ui button" type="submit">
 					ورود
                                          </button>
