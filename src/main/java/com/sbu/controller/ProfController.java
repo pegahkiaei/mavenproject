@@ -7,6 +7,7 @@ package com.sbu.controller;
 
 import com.sbu.dao.model.Cot;
 import com.sbu.dao.model.Prof;
+import com.sbu.dao.model.Stt;
 import com.sbu.service.impl.ProfManagerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.transaction.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,24 +58,42 @@ public class ProfController {
     }
 
     @RequestMapping(value="/infoEdit", method=RequestMethod.GET)
-    public String showeditProf(HttpServletRequest req, Model model) {
+    public String showEditProf(HttpServletRequest req, Model model) {
 
         return "prof/profInfoEdit";
 
     }
+
+    @RequestMapping(value="/infoEdit", method=RequestMethod.POST)
+    public String editprof(HttpServletRequest req, @RequestParam("username") String  usernname , @RequestParam("password") String password , Model model) throws HeuristicRollbackException, HeuristicMixedException, NotSupportedException, RollbackException, SystemException {
+        int id= (Integer) req.getSession().getAttribute("id");
+
+        boolean isUpdated=profManagerImpl.updateUserPass(id,usernname,password);
+        System.err.println("$$$$$$$$$$$$$$"+isUpdated);
+        Prof d= profManagerImpl.getProfByManagerId(usernname,password);
+        if (d!=null)
+            System.err.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+d.getUname()+d.getPass()+"steve jobs");
+        return "prof/profFirstPage";
+
+    }
+    @RequestMapping(value="/infoEdit", method=RequestMethod.GET)
+    public String showeditManager(HttpServletRequest req, Model model) {
+
+        return "prof/profInfoEdit";
+
+    }
+
+
     @RequestMapping(value="/listPage", method=RequestMethod.GET)
     public String showListOfStudents(HttpServletRequest req, Model model) {
-        boolean stuCountZero=false;
-        List<Cot> c= new ArrayList<Cot>();
-        Cot c1=new Cot();
-        c1.setName("ددی");
-        c1.setId(1);
-        Cot c2=new Cot();
-        c2.setName("دادادی");
-        c2.setId(2);
-        c.add(c1);
-        c.add(c2);
-        model.addAttribute("students",c);
+
+        List<Stt> s= new ArrayList<Stt>();
+        List<Cot> c = new ArrayList<Cot>();
+        boolean stuCountZero=s.isEmpty();
+        boolean courseCountZero=c.isEmpty();
+        model.addAttribute("courses",c);
+        model.addAttribute("isEmptyC",courseCountZero);
+        model.addAttribute("students",s);
         model.addAttribute("isEmpty",stuCountZero);
         return "prof/profStudentList";
 

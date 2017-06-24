@@ -14,6 +14,6 @@ public interface ProfManager {
     List<Cot>getCotBytermId(int tid);
     List<Stt> getStudentBycourse(String course);
     Boolean updateUserPass(int id, String usernname, String password);
-    Dept getDeptByDeptId(int id);
-    Dept getDeptByManagerId(String username, String password);
+    Dept getProfByDeptId(int id);
+    Dept getProfByManagerId(String username, String password);
 }

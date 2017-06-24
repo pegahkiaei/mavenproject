@@ -2,7 +2,6 @@ package com.sbu.service.impl;
 
 import com.sbu.dao.impl.ProfDAOImpl;
 import com.sbu.dao.model.Cot;
-import com.sbu.dao.model.Dept;
 import com.sbu.dao.model.Prof;
 import com.sbu.dao.model.Stt;
 import com.sbu.service.ProfManager;
@@ -40,31 +39,31 @@ public class ProfManagerImpl implements ProfManager {
 
     @Override
     public Boolean updateUserPass(int id, String usernname, String password)  {
-        Dept dept = profDAOImpl.getDept(id); // who is this?
-        Dept possibleDup = profDAOImpl.getDept(usernname);//maybe this username is taken
-        Dept newDep = null;
-        if (possibleDup == null || (possibleDup != null && possibleDup.getId() == dept.getId())) {//username is not taken
+        Prof P = profDAOImpl.getProf(id); // who is this?
+        Prof possibleDup = profDAOImpl.getProf(usernname);//maybe this username is taken
+        Prof newDep = null;
+        if (possibleDup == null || (possibleDup != null && possibleDup.getId() == P.getId())) {//username is not taken
             System.err.println("%%%%%%%%%%%%%%%%%%%%% going to update it!!");
-            dept.setUname(usernname);
+            P.setUname(usernname);
             System.err.println(usernname);
-            dept.setPassword(password);
-            profDAOImpl.updateDept(dept,usernname,password);
-            newDep=profDAOImpl.getDept(id);
+            P.setPass(password);
+            profDAOImpl.updateDept(P,usernname,password);
+            newDep=profDAOImpl.getProf(id);
             System.err.println("newDep data here            : " + newDep.getId() + "// " + newDep.getUname());
         }
 
-        Boolean isUpdated = (null != newDep && newDep.getId() == dept.getId());
+        Boolean isUpdated = (null != newDep && newDep.getId() == P.getId());
         return isUpdated;
     }
     @Override
-    public Dept getDeptByDeptId(int id) {
-        Dept d = profDAOImpl.getDept(id);
+    public Prof getProfByDeptId(int id) {
+        Prof d = profDAOImpl.getProf(id);
         return (d!=null? d:null);
     }
 
     @Override
-    public Dept getDeptByManagerId(String username, String password) {
-        Dept d=profDAOImpl.getDept(username,password);
+    public Prof getProfByManagerId(String username, String password) {
+        Prof d=profDAOImpl.getProf(username,password);
         return (d!=null? d:null);
 
     }
