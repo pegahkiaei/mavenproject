@@ -5,10 +5,6 @@
  */
 package com.sbu.dao.model;
 
-
-import com.sun.istack.internal.Nullable;
-import javafx.scene.image.Image;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

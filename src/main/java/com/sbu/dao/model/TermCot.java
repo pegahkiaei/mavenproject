@@ -1,6 +1,8 @@
 package com.sbu.dao.model;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Time;
+import java.util.Map;
 
 /**
  * Created by Pegah on 6/10/2017.
@@ -12,7 +14,12 @@ public class TermCot implements Serializable {
     @EmbeddedId
     private PKTermCot id;
 
-
+//    @Column(name="time")
+//    private Map<nteger,IntegerI> courseTime;//
+//    @Column(name = "examDate")
+//    private String examDate;
+//    @Column(name = "examTime")
+//    private Time time;
     //TODO:filterId
     //--------------------------------------------------relations
 

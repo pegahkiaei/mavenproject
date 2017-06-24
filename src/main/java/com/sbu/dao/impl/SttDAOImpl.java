@@ -6,16 +6,20 @@
 package com.sbu.dao.impl;
 
 
+import com.sbu.dao.SttDAO;
+import com.sbu.dao.model.StCot;
 import com.sbu.dao.model.Stt;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,13 +27,15 @@ import java.util.List;
  * @author Pegah
  */
 @Repository
-public class SttDAOImpl {
+public class SttDAOImpl implements SttDAO {
     public SttDAOImpl() {
     }
     
     @PersistenceContext
     public EntityManager entityManager;
-    
+
+
+    @Override
     @Transactional
     public Stt getStt(String uname) {
         String hql = "SELECT s FROM Stt s WHERE s.uname=:userName";
@@ -38,25 +44,25 @@ public class SttDAOImpl {
         List<Stt> res = (List<Stt>) query.getResultList();
         return res == null || res.size() == 0 ? null : res.get(0);
     }
-    /*   CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<User> cq = builder.createQuery(User.class);
-        Root<User> root = cq.from(User.class);
-        cq.select(root);
-        return entityManager.createQuery(cq).getResultList();*/
-    
-//    public List<Stt> findAllStt() {
-//        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-//        CriteriaQuery<Stt> cq = builder.createQuery(Stt.class);
-//        Root<Stt> root = cq.from(Stt.class);
-//        cq.select(root);
-//        return entityManager.createQuery(cq).getResultList();
-//    }
+
+    @Transactional
+    @Override
+    public List<StCot> getStudentCoursesByStId(String name, Integer id) {
+        return entityManager.createQuery("SELECT sc FROM StCot sc where sc.student.id=:idnumber").setParameter("idnumber",id).getResultList();
+    }
+
+    @Override
+    public List<StCot> getStudentCoursesByStIdANDterm(Integer term, Integer id) {
+        return entityManager.createQuery("SELECT sc FROM StCot sc where sc.student.id=:idnumber and sc.term=:courseterm")
+                .setParameter("idnumber",id)
+                .setParameter("courseterm",term)
+                .getResultList();
+    }
 
 
     public EntityManager getEntityManager() {
         return entityManager;
     }
-
     public void setEntityManager(EntityManager entityManager) {
         this.entityManager = entityManager;
     }

@@ -25,14 +25,15 @@
     width: 100px ! important;
     margin-top: 30px;
 }
+
 .style-hidden-as-results{
     display: none;
 }
 .style-row{
     height: 50%;
-    width: 160% !important;
+    width: 160% !important;"
 }
-.last.container{
+.last.container {
      margin-bottom: 300px !important;
  }
 h1.ui.center.header {

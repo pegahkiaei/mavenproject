@@ -5,8 +5,13 @@
  */
 package com.sbu.service;
 
+import com.sbu.controller.model.CourseDetail;
+import com.sbu.controller.model.TermDetail;
+import com.sbu.controller.model.TermsData;
 import com.sbu.dao.model.Stt;
-import java.util.ArrayList;
+
+import java.util.List;
+import java.util.TreeMap;
 
 
 /**
@@ -16,5 +21,9 @@ import java.util.ArrayList;
 public interface SttManager {
 
     Stt getStudentByUname(String uname,String pass);
-    ArrayList<Stt> getAllStudents(); 
+
+    TreeMap<Integer,TermsData> getBriefTableContext(String name, Integer id);
+
+    List<TermDetail> getTermDetail(Integer term, Integer id);
+    CourseDetail getCourseDetail(Integer cid, Integer id, Integer term);
 }

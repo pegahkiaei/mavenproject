@@ -56,7 +56,7 @@
                             <img src="../../resources/img/stu-ico.png"/>
                             <p>دانشجو</p>
                                 <div>
-                                    <form method="post" action="studentLogin">    
+                                    <form method="post" action="student">
                                         <button  class="ui button" type="submit">
 					ورود
                                          </button>
