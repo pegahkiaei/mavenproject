@@ -3,10 +3,15 @@
  */
 function show() {
     if (document.getElementById("Unit").value ==  "mabani" )
-    {$('.result').removeClass("hidden");}
+    {$('.result').removeClass("hidden");
+    //alert("ahay");
+    }
+//alert("yey");
 
 }
-function clicking_on_result(id){
-
-
+function cancell(){
+    alert("?????? ???? ?????? ??? ?????.");
+}
+function ok(){
+    alert("?????? ????? ??");
 }
