@@ -75,7 +75,6 @@ public class ProfController {
         c.add(c2);
         model.addAttribute("students",c);
         model.addAttribute("isEmpty",stuCountZero);
-        System.out.println(c.size()+ "  "+ stuCountZero+ " here in controller");
         return "prof/profStudentList";
 
     }
