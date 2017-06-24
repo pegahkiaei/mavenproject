@@ -9,7 +9,7 @@
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>صفحه اصلي</title>
+    <title>منوی اصلی دانشجو</title>
 
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/assets/semantic/semantic.rtl.min.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/assets/css/site.css">
@@ -78,7 +78,7 @@
     <div class="menu">
       <a class="active olive item" href="#">صفحه اعلان ها</a>
 	  <a class="olive item" href="stuentInfoEdit.html">مشاهده و ويرايش پروفايل</a>
-	  <a class="olive item" href="transcript.html">مشاهده کارنامه</a>
+	  <a class="olive item" href="/student/transcript">مشاهده کارنامه</a>
 
 	  <a class="olive item" href="entekhabVahed.html">انتخاب واحد</a>
 
@@ -92,7 +92,7 @@
 	  <div id="sideM" class="ui simple right sidebar visible inverted vertical menu">
 		  <a class=" active olive item" href="#">صفحه اعلان ها</a>
 		  <a class="olive item" href="stuentInfoEdit.html">مشاهده و ويرايش پروفايل</a>
-		  <a class="olive item" href="transcript.html">مشاهده کارنامه</a>
+		  <a class="olive item" href="/student/transcript">مشاهده کارنامه</a>
 
 		  <a class="olive item" href="entekhabVahed.html">انتخاب واحد</a>
 
