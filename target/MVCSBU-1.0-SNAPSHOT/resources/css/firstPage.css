@@ -16,7 +16,7 @@
 	float: right;
 	margin-left:10px;
 	margin-top:0px;
-	text-align:rtl;
+	text-align:right;
 }
 
 .style-container{
@@ -50,7 +50,7 @@
 #topM{
 		display:none;
 	}
-	
+
 @media (max-width: 700px) {
 	.style-content{
 		margin-right:20px !important;	
@@ -61,11 +61,13 @@
 		height:0px !important;
 		display:none !important;
 	}
-	
+
 
     #sideM {
         display:none !important;
+
     }
+
 	#topM{
 		display:inline !important;
 	}

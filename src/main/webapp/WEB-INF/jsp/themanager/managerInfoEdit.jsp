@@ -69,7 +69,7 @@
     <i class="list layout icon"></i>
 	&nbsp گزينه ها
     <div class="menu">
-      <a class="orange item" href="managerFirstPage.html">صفحه اعلان ها</a>
+      <a class="orange item" href="/themanager/managerFirstPage">صفحه اعلان ها</a>
 	  <a class="active orange item" href="#">مشاهده و ویرایش پروفایل</a>
 	  
 	  <a class="orange item" href="managerEditCourse.html">مدیریت درس ها</a>

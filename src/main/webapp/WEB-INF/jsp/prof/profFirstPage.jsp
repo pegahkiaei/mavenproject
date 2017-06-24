@@ -75,9 +75,9 @@
     <i class="list layout icon"></i>
 	&nbsp گزینه ها
     <div class="menu">
-      <a class="active yellow item">صفحه اعلان ها</a>
+      <a class="active yellow item" href="prof/profFirstPage">صفحه اعلان ها</a>
 	  <a class="yellow item" href="profInfoEdit.html">مشاهده و ویرایش پروفایل</a>
-	  <a class="yellow item" href="studentsList.html">لیست دانشجویان</a>
+	  <a class="yellow item" href="/prof/listPage">لیست دانشجویان</a>
 
 	  <a class ="yellow item" href="home.html"> خروج</a>
     </div>
@@ -87,9 +87,9 @@
 </div>
 	<div class="container pusher style-container" >
 	  <div id="sideM" class="ui simple right sidebar visible inverted vertical menu">
-		  <a class="active yellow item" href="#">صفحه اعلان ها</a>
+		  <a class="active yellow item" href="prof/profFirstPage">صفحه اعلان ها</a>
 		  <a class="yellow item" href="profInfoEdit.html">مشاهده و ویرایش پروفایل</a>
-		  <a class="yellow item" href="studentsList.html">لیست دانشجویان</a>
+		  <a class="yellow item" href="/prof/listPage">لیست دانشجویان</a>
 
 		  <a class ="yellow item" href="home.html"> خروج</a>
 			  
@@ -100,11 +100,7 @@
 		<div class="ui success massive message">
 			  دکتر ${name}، خوش آمدید
 		</div>
-		
-		<div class="ui visible message">
-		  <p>این اولین ورود شماست. لطفا رمز عبور خود را عوض کنید.</p>
-		  
-		</div>
+
 		<div class="ui visible message">
 		  <p>یک درس جدید اضافه شده است. برای مشاهده فهرست کلاسی به لیست دانشجویان مراجعه کنید.</p>
 		  

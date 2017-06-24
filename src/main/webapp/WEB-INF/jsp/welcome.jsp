@@ -44,7 +44,7 @@
 			<img src="../../resources/img/prof-ico.png"/>
 			   <p>استاد</p>
 			   <div>
-                               <form method="post" action="profLogin">    
+                               <form method="post" action="prof">
                                         <button  class="ui button" type="submit">
 					ورود
                                          </button>

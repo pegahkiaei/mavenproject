@@ -2,12 +2,11 @@ body{
 	background:#dadada;
 }
 
-
 @font-face {
 font-family: "yekan";
-src: url(fonts/Yekan.eot);
-src: url(fonts/Yekan.eot?#iefix) format("embedded-opentype"), url(fonts/Yekan.woff)
-format("woff"), url(fonts/Yekan.ttf) format("truetype"), url(fonts/Yekan.svg#BYekan) format("svg");
+src: url(../font/Yekan.eot);
+src: url(../font/Yekan.eot?#iefix) format("embedded-opentype"), url(../font/Yekan.woff)
+format("woff"), url(../font/Yekan.ttf) format("truetype"), url(../font/Yekan.svg#BYekan) format("svg");
 font-weight: normal;
 font-style: normal
 }
@@ -21,10 +20,14 @@ font-style: normal
 	clear:both;
 	position: relative;
     bottom: 0 ;
+	top: 60px;
     
 	height:50px;
-	margin-top:10px;
-	
+	margin-top:13px;
+	display: flex;
+	min-height: 6vh;
+	flex-direction: column;
+	flex: 0 0 auto;
 }
 
 .style-header{
@@ -47,13 +50,5 @@ html[lang="ar"] {
 }
 
 @media (max-width: 700px) {
-  .style-footer{
-	
-	position: relative;
-    bottom: 0 ;
-    
-	height:50px;
-	margin-top:10px;
-	
-}
+  
 }

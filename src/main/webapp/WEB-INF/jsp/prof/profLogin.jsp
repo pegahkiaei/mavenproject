@@ -29,7 +29,7 @@
 </header>
 <div  style="margin:150px 0 150px 400px;" class="ui two column middle aligned very relaxed stackable grid">
   <div class="column">
-    <form id="mydiv" class="ui form" name="loginInfo" method="post" action="/profLogin/login">
+    <form id="mydiv" class="ui form" name="loginInfo" method="post" action="/prof/login">
       <div class="field">
         <label>شناسه کاربري</label>
         <div class="ui left icon input">

@@ -75,10 +75,10 @@
     <i class="list layout icon"></i>
 	&nbsp گزینه ها
     <div class="menu">
-      <a class="active orange item" href="#">صفحه اعلان ها</a>
+      <a class="active orange item" href="/themanagers/managerFirstPage">صفحه اعلان ها</a>
 	  <a class="orange item" href="/themanagers/infoEdit">مشاهده و ویرایش پروفایل</a>
 	  
-	  <a class="orange item" href="managerEditCourse.html">مدیریت درس ها</a>
+	  <a class="orange item" href="/themanagers/addEditCourse">مدیریت درس ها</a>
 	  <a class="orange item" href="managerNewTerm.html">مدیریت ترم ها</a>	
 	  <a class="orange item" href="studentListOfManager.html">لیست دانشجویان</a>
 	  <a class ="orange item" href="/welcome"> خروج</a>
@@ -89,13 +89,13 @@
 </div>
 	<div class="container pusher style-container" >
 	  <div id="sideM" class="ui simple right sidebar visible inverted vertical menu">
-		  <a class="active orange item" href="#">صفحه اعلان ها</a>
+		  <a class="active orange item" href="/themanagers/managerFirstPage"">صفحه اعلان ها</a>
 		  <a class="orange item" href="/themanagers/infoEdit">مشاهده و ویرایش پروفایل</a>
 		  
-		  <a class="orange item" href="managerEditCourse.html">مدیریت درس ها</a>
+		  <a class="orange item" href="/themanagers/addEditCourse">مدیریت درس ها</a>
 		  <a class="orange item" href="managerNewTerm.html">مدیریت ترم ها</a>	
 		  <a class="orange item" href="studentListOfManager.html">لیست دانشجویان</a>
-		  <a class ="orange item" href="home.html"> خروج</a>
+		  <a class ="orange item" href="/themanagers/getOut"> خروج</a>
 			  
 		</div>
 	  <div class="style-sideSupport"></div>
