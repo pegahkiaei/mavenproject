@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="088f86bd-3550-4eb4-bbd2-81d85712c4bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/gson-2.6.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/prof/profStudentList.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/student/studentInfoEdit.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/student/transcript.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1608,7 +1604,7 @@
       <workItem from="1498298082400" duration="10463000" />
       <workItem from="1498313519863" duration="17975000" />
       <workItem from="1498340675201" duration="4606000" />
-      <workItem from="1498368133965" duration="2776000" />
+      <workItem from="1498368133965" duration="2789000" />
     </task>
     <task id="LOCAL-00001" summary="tursday4:55">
       <created>1497961817441</created>
@@ -1708,11 +1704,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498370876945</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="1:20 tuesday, filter corrected">
+      <created>1498370945769</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1498370945769</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224473000" />
+    <option name="totallyTimeSpent" value="224486000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
