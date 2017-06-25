@@ -1,30 +1,81 @@
 /**
  * Created by Pegah on 4/2/2017.
  */
-function rowClicked( id){
-    var i,rowElement, relatedResult,resultArrays;
-    relatedResult = "course-brief-"+id;
-    rowElement = document.getElementById(relatedResult);
-    resultArrays = document.getElementsByClassName("style-hidden-as-results");
-    for(i =0;i<resultArrays.length;i++)
-    {
-        resultArrays[i].style.display = "none";
-    }
-    rowElement.style.display = "inline";
+function rowClicked(term){
+$.ajax({
+    url: "/student/transcript_detail",
+    data:{term:term},
+    on:"/student/transcript_detail",
+    method:"POST",
+    success: function(responseJson) {
+        $('#course-brief-row').empty();
+        $('#nomre_term_body').empty();
+        // var a = document.createElement('a');
+        $.each(responseJson, function(index,termDetail){
+            $("#course-brief-row").append("<a class='style-item' onclick='courseClicked("+termDetail.coirseId+","+term+")' >" +termDetail.coursename+"<br>"+
+                                            termDetail.grade+"<br>"+
+                                            termDetail.stat+"<br>"+
+                                            "<p><br>&nbsp;</p>"+
+                "</a>");
+        });
+    },
+    error: function (jqXHR, exception) {
+        var msg = '';
+        if (jqXHR.status === 0) {
+            msg = 'Not connect.\n Verify Network.';
+        } else if (jqXHR.status == 404) {
+            msg = 'Requested page not found. [404]';
+        } else if (jqXHR.status == 500) {
+            msg = 'Internal Server Error [500].';
+        } else if (exception === 'parsererror') {
+            msg = 'Requested JSON parse failed.';
+        } else if (exception === 'timeout') {
+            msg = 'Time out error.';
+        } else if (exception === 'abort') {
+            msg = 'Ajax request aborted.';
+        } else {
+            msg = 'Uncaught Error.\n' + jqXHR.responseText;
+        }
+        $('#post').html(msg);
+    },
+
+});
 }
-function courseClicked(courseName){
-    var courseid;
-    courseid = document.getElementById(courseName);
-    if(courseid.style.display =="none")
-        courseid.style.display = "table-row";
+
+function courseClicked (coid,term) {
+
+    alert("YEAS?!")
+    $.ajax({
+        url: "/student/course_detail",
+        data:{cid:coid,term:term},
+        on:"/student/course_detail",
+        method:"POST",
+        success: function(responseJson) {
+            $('#nomre_term_body').empty();
+
+            var $tbody = $("<tbody>").appendTo($("#nomre_term"));
+            $.each(responseJson, function(index,courseDetail){
+                // var color = courseDetail.protest==true ? "green":"red";
+                alert("success"+courseDetail.coname+"sssssss");
+                $("<tr class = 'detail-Result'>").appendTo($tbody)
+                // Integer coid, String coname, Integer cocredits, float grade, String stat, String courseType, boolean protest
+                    .append($("<td>").text(responseJson.coid))
+                    .append($("<td>").text(responseJson.coname))
+                    .append($("<td>").text(responseJson.cocredits))
+                    .append($("<td>").text(responseJson.grade))
+                    .append($("<td>").text(responseJson.stat))
+                    .append($("<td>").text(responseJson.courseType))
+                    .append($("<td>").text("<i class='large green checkmark icon'></i>"));
+            });
+        },
+        error: function () {
+            alert("ERROR");
+        }
+    });
 }
-function protest(courseid){
 
 
-
-}
-
-  $(document).ready(function() {
+$(document).ready(function() {
 
         var
             $headers     = $('body > h3'),
@@ -32,7 +83,10 @@ function protest(courseid){
             ignoreScroll = false,
             timer
             ;
+     //termDetailsubmission 
 
+        
+      
 // Preserve example in viewport when resizing browser
         $(window)
             .on('resize', function() {

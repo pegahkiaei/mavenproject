@@ -17,7 +17,7 @@ public class StCot implements Serializable {
     private int term;
 
     @Column(name = "grade")
-    private int grade;
+    private Float grade;
 
     //--------------------------------------------------relations
     @ManyToOne
@@ -35,7 +35,7 @@ public class StCot implements Serializable {
     public StCot() {
     }
 
-    public StCot(Integer stId, Integer coId, int term, int grade, Stt student, Cot course) {
+    public StCot(Integer stId, Integer coId, int term, Float grade, Stt student, Cot course) {
         this.term = term;
         this.grade = grade;
         this.student = student;
@@ -60,11 +60,11 @@ public class StCot implements Serializable {
         this.term = term;
     }
 
-    public int getGrade() {
+    public Float getGrade() {
         return grade;
     }
 
-    public void setGrade(int grade) {
+    public void setGrade(Float grade) {
         this.grade = grade;
     }
 

@@ -57,12 +57,6 @@ public class ProfController {
         return "prof/profLogin";
     }
 
-    @RequestMapping(value="/infoEdit", method=RequestMethod.GET)
-    public String showEditProf(HttpServletRequest req, Model model) {
-
-        return "prof/profInfoEdit";
-
-    }
 
     @RequestMapping(value="/infoEdit", method=RequestMethod.POST)
     public String editprof(HttpServletRequest req, @RequestParam("username") String  usernname , @RequestParam("password") String password , Model model) throws HeuristicRollbackException, HeuristicMixedException, NotSupportedException, RollbackException, SystemException {
@@ -86,7 +80,8 @@ public class ProfController {
 
     @RequestMapping(value="/listPage", method=RequestMethod.GET)
     public String showListOfStudents(HttpServletRequest req, Model model) {
-
+        int id=Integer.parseInt(req.getParameter("id"));
+        Prof p=profManagerImpl.getProfByDeptId(id);
         List<Stt> s= new ArrayList<Stt>();
         List<Cot> c = new ArrayList<Cot>();
         boolean stuCountZero=s.isEmpty();

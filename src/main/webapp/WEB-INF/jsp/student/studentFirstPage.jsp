@@ -9,7 +9,7 @@
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>صفحه اصلي</title>
+    <title>منوی اصلی دانشجو</title>
 
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/assets/semantic/semantic.rtl.min.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/assets/css/site.css">
@@ -38,7 +38,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/transition.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/transition.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/visibility.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/visibility.min.js">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/visibility.min.js"></script>
 
 		<script>
 
@@ -77,12 +77,12 @@
 	&nbsp گزینه ها
     <div class="menu">
       <a class="active olive item" href="#">صفحه اعلان ها</a>
-	  <a class="olive item" href="stuentInfoEdit.html">مشاهده و ويرايش پروفايل</a>
-	  <a class="olive item" href="transcript.html">مشاهده کارنامه</a>
+	  <a class="olive item" href="/student/InfoEdit">مشاهده و ويرايش پروفايل</a>
+	  <a class="olive item" href="/student/transcript">مشاهده کارنامه</a>
 
 	  <a class="olive item" href="entekhabVahed.html">انتخاب واحد</a>
 
-	  <a class ="olive item" href="home.html"> خروج</a>
+	  <a class ="olive item" href="/student/logout"> خروج</a>
     </div>
   </div>
 
@@ -91,12 +91,12 @@
 	<div class="container pusher style-container" >
 	  <div id="sideM" class="ui simple right sidebar visible inverted vertical menu">
 		  <a class=" active olive item" href="#">صفحه اعلان ها</a>
-		  <a class="olive item" href="stuentInfoEdit.html">مشاهده و ويرايش پروفايل</a>
-		  <a class="olive item" href="transcript.html">مشاهده کارنامه</a>
+		  <a class="olive item" href="/student/InfoEdit">مشاهده و ويرايش پروفايل</a>
+		  <a class="olive item" href="/student/transcript">مشاهده کارنامه</a>
 
 		  <a class="olive item" href="entekhabVahed.html">انتخاب واحد</a>
 
-		  <a class ="olive item" href="home.html"> خروج</a>
+		  <a class ="olive item" href="/student/logout"> خروج</a>
 			  
 		</div>
 	  <div class="style-sideSupport"></div>

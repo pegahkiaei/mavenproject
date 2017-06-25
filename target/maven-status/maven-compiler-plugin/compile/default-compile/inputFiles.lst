@@ -1,3 +1,4 @@
+C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\model\TermsData.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\UserDAO.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\impl\TheManagerManagerImpl.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\filter\StudentLoginFilter.java
@@ -6,11 +7,12 @@ C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\impl\Us
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\PKTermCot.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\UserManager.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\ProfManager.java
+C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\model\TermDetail.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\WelcomeController.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\model\Student.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\Cot.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\TheManagerManager.java
-C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\STTDAO.java
+C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\SttDAO.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\TermCot.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\Stt.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\ManagerController.java
@@ -20,6 +22,7 @@ C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\SubMa
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\impl\ProfManagerImpl.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\impl\ProfDAOImpl.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\impl\SttDAOImpl.java
+C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\model\CourseDetail.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\dao\model\StCot.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\controller\ProfController.java
 C:\Users\Nia\Documents\GitHub\mavenproject\src\main\java\com\sbu\service\SttManager.java

@@ -1,7 +1,6 @@
 package com.sbu.service;
 
 import com.sbu.dao.model.Cot;
-import com.sbu.dao.model.Dept;
 import com.sbu.dao.model.Prof;
 import com.sbu.dao.model.Stt;
 
@@ -14,6 +13,6 @@ public interface ProfManager {
     List<Cot>getCotBytermId(int tid);
     List<Stt> getStudentBycourse(String course);
     Boolean updateUserPass(int id, String usernname, String password);
-    Dept getProfByDeptId(int id);
-    Dept getProfByManagerId(String username, String password);
+    Prof getProfByDeptId(int id);
+    Prof getProfByManagerId(String username, String password);
 }
