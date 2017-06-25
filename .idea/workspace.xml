@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="088f86bd-3550-4eb4-bbd2-81d85712c4bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/controller/model/Courses.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/controller/model/MyStudent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/dao/ProfDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/classes/com/sbu/controller/ProfController.class" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/classes/com/sbu/controller/ProfController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/classes/com/sbu/controller/StudentController.class" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/classes/com/sbu/controller/StudentController.class" />
@@ -21,20 +18,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/sbu/service/ProfManager.class" afterPath="$PROJECT_DIR$/target/classes/com/sbu/service/ProfManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/sbu/service/impl/ProfManagerImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/sbu/service/impl/ProfManagerImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/controller/ManagerController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/controller/ManagerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/controller/ProfController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/controller/ProfController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/controller/StudentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/controller/StudentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/controller/filter/ProfLoginFilter.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/controller/filter/ProfLoginFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/dao/impl/ProfDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/dao/impl/ProfDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/dao/impl/SttDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/dao/impl/SttDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/dao/model/PKTermCot.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/dao/model/PKTermCot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/dao/model/Prof.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/dao/model/Prof.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/service/ProfManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/service/ProfManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/service/impl/ProfManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/service/impl/ProfManagerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/service/impl/SttManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/service/impl/SttManagerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/prof/profStudentList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/prof/profStudentList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/studentList.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/studentList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/transcript.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/transcript.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/resources/js/studentList.js" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/resources/js/studentList.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/resources/js/transcript.js" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/resources/js/transcript.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
@@ -1516,7 +1499,7 @@
       <workItem from="1498313519863" duration="17975000" />
       <workItem from="1498340675201" duration="4606000" />
       <workItem from="1498368133965" duration="21791000" />
-      <workItem from="1498391332661" duration="2806000" />
+      <workItem from="1498391332661" duration="2831000" />
     </task>
     <task id="LOCAL-00001" summary="tursday4:55">
       <created>1497961817441</created>
@@ -1637,11 +1620,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498370966823</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="1:20 tuesday, filter corrected">
+      <created>1498394163840</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1498394163840</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246294000" />
+    <option name="totallyTimeSpent" value="246319000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1807,6 +1797,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1913,6 +1904,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1996,6 +1988,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#openCity#0" expanded="false" />
+            <element signature="e#176#229#0" expanded="false" />
+            <element signature="e#332#417#0" expanded="false" />
+            <element signature="n#!!block;n#show#0" expanded="false" />
+            <element signature="e#585#691#0" expanded="false" />
+            <element signature="e#731#837#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2011,6 +2011,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
