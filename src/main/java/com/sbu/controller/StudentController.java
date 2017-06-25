@@ -57,7 +57,7 @@ public class StudentController {
     public String logout(HttpServletRequest request,HttpServletResponse Response)
     {
         request.getSession().invalidate();
-        return "welcome";
+        return "redirect:welcome";
     }
 
     @RequestMapping(value="/transcript", method = RequestMethod.GET)
@@ -79,10 +79,10 @@ public class StudentController {
     }
 
     @RequestMapping(value="/transcript_detail", method = RequestMethod.POST)
-    public void termDetail(HttpServletRequest request, HttpServletResponse response, @RequestParam("term") String term)throws ServletException, IOException
-    {//https://stackoverflow.com/questions/4112686/how-to-use-servlets-and-ajax
+    public void termDetail(HttpServletRequest request, HttpServletResponse response, @RequestParam("term") String term)throws IOException {//https://stackoverflow.com/questions/4112686/how-to-use-servlets-and-ajax
         HttpSession s = request.getSession();
         List<TermDetail> details = sttManager.getTermDetail(Integer.parseInt(term), (Integer) s.getAttribute("id"));
+
         String json = new Gson().toJson(details);
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");

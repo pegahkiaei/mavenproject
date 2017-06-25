@@ -29,5 +29,5 @@ function openCity(evt, cityName) {
 	
    
   }
-  
-   
+
+

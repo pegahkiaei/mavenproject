@@ -93,14 +93,14 @@ public class ManagerController {
         int id= (Integer) req.getSession().getAttribute("id");
         Dept d = managerManagerImpl.getDeptByDeptId(id);
 
-        //List<Cot> courses = d.getDeptCourses();
+        //List<Cot> Courses = d.getDeptCourses();
         //List<SubMajt> subMajors = d.getSubMajors();
         List<SubMajt> subMajors = new ArrayList<SubMajt>();
         model.addAttribute("subs", subMajors);
         model.addAttribute("isEmpt", !subMajors.isEmpty());
         //model.addAttribute("subCount",subMajors.isEmpty());
-        //model.addAttribute("cots", courses);
-        //model.addAttribute("cots",!courses.isEmpty());
+        //model.addAttribute("cots", Courses);
+        //model.addAttribute("cots",!Courses.isEmpty());
 
         return "themanager/managerEditCourse";
 

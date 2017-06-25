@@ -44,7 +44,7 @@ public class SttManagerImpl implements SttManager{
     @Override
     public TreeMap<Integer,TermsData> getBriefTableContext(String name, Integer id)
     {
-        //here i should get courses from student and check ,sum and get GPA,
+        //here i should get Courses from student and check ,sum and get GPA,
         // and count the not known ones and etcetera etcetera etcetera
         List<StCot> studentCourses = sttDAO.getStudentCoursesByStId(name,id);
         return ((studentCourses.size()==0)?null:fillTermsDatas(studentCourses));

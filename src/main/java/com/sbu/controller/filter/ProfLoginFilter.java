@@ -26,7 +26,6 @@ public class ProfLoginFilter implements Filter {
         String loginURI = request.getContextPath() + "/prof"; /* student login page */
         String stuFirstPage = request.getContextPath() + "/prof/login"; /* student login page */
         //String mainPage = request.getContextPath() + "/"; /* ?! */
-
         boolean loggedIn = (session != null) && (session.getAttribute("type") != null) && (session.getAttribute("type") == "p");
         boolean loginRequest = request.getRequestURI().equals(loginURI);
         //boolean isMainPage = request.getRequestURI().equals(mainPage);
@@ -39,7 +38,7 @@ public class ProfLoginFilter implements Filter {
             System.err.println("p!P!P!P!P!P!P!P!P!P!P!P!p" + request.getRequestURI() + isFirstPage + loginRequest );
             response.setStatus(HttpServletResponse.SC_TEMPORARY_REDIRECT);
             response.setHeader("Location", loginURI);
-            //response.sendRedirect(loginURI); //redirect user to login page!! this user mustn't be here!
+            response.sendRedirect(loginURI); //redirect user to login page!! this user mustn't be here!
         }
     }
 

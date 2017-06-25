@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/firstPage.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
 
+
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/jquery-2.2.2.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/semantic/semantic.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/semantic.js"></script>
@@ -42,6 +43,7 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/visibility.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/visibility.min.js"></script>
 
+
     <script>
 
         $(document)
@@ -55,6 +57,86 @@
                 });
             })
         ;
+    </script>
+    <script>
+        function choosingTermYear(){
+            $.ajax({
+                url:"/prof/chooseTY",
+                data:{year:$('#year').val(),term:$('#term').val()},//
+                on:"/prof/chooseTY",
+                method:"POST",
+                success: function(responseJson) {
+                    //language=JQuery-CSS
+                    //                    $("#dynamicCourses").empty();
+                    $("#mytable").removeClass("style-hidden-as-results");
+                    $("#dynamicCourses").removeClass("style-hidden-as-results");
+                    $.each(responseJson, function(index,Courses){
+                        $("#dynamicCourses").append("<tr  id=row"+index+"><td onclick='choosingCourse("+Courses.coid+","+term+","+year+",)'>"+Courses.name+" </td></tr>");
+                    });
+                },
+                error: function (jqXHR, exception) {
+                    alert("NO");
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    $('#post').html(msg);
+                }
+
+            });
+        }
+
+
+    </script>
+    <script>
+        function choosingCourse(coid,term,year){
+            $.ajax({
+                url:"/prof/chooseCO",
+                data:{year:year,term:term,coid:coid},
+                on:"/prof/chooseCO",
+                method:"POST",
+                success: function(responseJson) {
+//                    $("#mytable").removeClass("style-hidden-as-results");
+//                    $("#dynamicCourses").removeClass("style-hidden-as-results");
+//                    $.each(responseJson, function(index,Courses){
+//                        $("#dynamicCourses").append("<tr  id=row"+index+"><td onclick='choosingCourse("+Courses.coid+","+term+","+year+",)'>"+Courses.name+" </td></tr>");
+//                    });
+                },
+                error: function (jqXHR, exception) {
+                    alert("NO");
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    $('#post').html(msg);
+                }
+
+            });
+        }
     </script>
 
 </head>
@@ -76,9 +158,9 @@
             <i class="list layout icon"></i>
             &nbsp گزینه ها
             <div class="menu">
-                <a class="active yellow item" href="profFirstPage.jsp">صفحه اعلان ها</a>
+                <a class="yellow item" href="profFirstPage.jsp">صفحه اعلان ها</a>
                 <a class="yellow item" href="/prof/infoEdit">مشاهده و ویرایش پروفایل</a>
-                <a class="yellow item" href="/prof/listPage">لیست دانشجویان</a>
+                <a class="active yellow item" href="/prof/listPage">لیست دانشجویان</a>
 
                 <a class ="yellow item"> خروج</a>
             </div>
@@ -88,9 +170,9 @@
 </div>
 <div class="container pusher style-container" >
     <div id="sideM" class="ui simple right sidebar visible inverted vertical menu">
-        <a class="active yellow item">صفحه اعلان ها</a>
+        <a class="yellow item">صفحه اعلان ها</a>
         <a class="yellow item" href="/prof/infoEdit">مشاهده و ویرایش پروفایل</a>
-        <a class="yellow item" href="/prof/listPage">لیست دانشجویان</a>
+        <a class="active yellow item" href="/prof/listPage">لیست دانشجویان</a>
 
         <a class ="yellow item"> خروج</a>
 
@@ -99,11 +181,11 @@
 
     <div class=" style-content dimmable">
         <!--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
-        <form action="/prof/chooseTY" method="post">
-            <label>انتخاب سال</label><input class="ui two wide input" name="year" type="text">
-            <label>انتخاب ترم</label><input class="ui three wide input" name="term" type="text">
+        <form >
+            <label>انتخاب سال</label><input class="ui two wide input" name="term" id ="term" type="text">
+            <label>انتخاب ترم</label><input class="ui three wide input" name="year" id="year" type="text">
             <br />
-            <button class="ui yellow button" type="submit">تایید</button>
+            <button class="ui yellow button" type="button" onclick="choosingTermYear()">تایید</button>
         </form>
         <!--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
         <div class="ui two column divided internally celled hidden grid ">
@@ -111,30 +193,27 @@
                 <!-- ************************************************* table1-->
                 <div class="ui container four wide column">
                     <div class="ui scrollable container ">
-                        <table class="ui style-hidden-as-results complex celled  sorted  unstructured yellow  small compact selectable  right highlight aligned unstackable table table-striped">
-                            <thead>
+                        <table class="ui hidden complex celled  sorted  unstructured yellow  small compact selectable  right highlight aligned unstackable table table-striped" id="mytable">
+                            <thead id="header_dorus">
                             <tr>
                                 <th>عنوان درس ها </th>
                             </tr>
 
                             </thead>
-                            <tbody>
+                            <tbody id="dynamicCourses">
 
-                            <c:set var="count" value="0" scope="page" />
-                            <c:if test="${!isEmptyC}">
                                 <div class="style-hidden-as-results"  id="course-brief-row1">
-                                    <c:forEach items="${course}" var="cot">
-                                        <c:set var="count" value="${count + 1}" scope="page"/>
-                                       <tr onclick="" id="row+${count}">
-                                           <td>
-                                             ${cot.name}
-                                           </td>
-                                       </tr>
-                                    </c:forEach>
+                                    <%--<c:forEach items="${course}" var="cot">--%>
+                                        <%--<c:set var="count" value="${count + 1}" scope="page"/>--%>
+                                       <%--<tr>--%>
+                                           <%--<td>--%>
+                                             <%--&lt;%&ndash;${cot.name}&ndash;%&gt;--%>
+                                           <%--</td>--%>
+                                       <%--</tr>--%>
+                                    <%--</c:forEach>--%>
+
                                     <button class="ui yellow button" type="submit">ثبت نمرات</button>
                                 </div>
-
-                            </c:if>
 
                             </tbody>
 
@@ -143,30 +222,24 @@
                 </div>
                 <!--table-end1***************************************************-->
                 <div class="ui container twelve wide column  ">
-                <c:if test="${!isEmpty}">
                     <div id="brief" class="ui vertical sticky floating top relaxed divided list sticky_score_div" >
                         <div class="style-hidden-as-results"  id="course-brief-row">
-                            <form name="listOfStu" action="/prof/giveNomre" method="post">
-                            <c:forEach items="${students}" var="stu">
+                            <form name="listOfStu">
                                 <div class="inline fields">
                                     <div class="four wide field">
-                                    <label>${stu.name}</label>
+                                    <label></label>
                                     </div>
 
-                                <div class="two wide field">
-                                    <div class="ui input">
-                                    <input  class="two wide field" placeholder="نمره" type="text" name="score+${stu.id}">
+                                    <div class="two wide field">
+                                        <div class="ui input">
+                                        <input  class="two wide field" placeholder="نمره" type="text" name="score+">
+                                        </div>
                                     </div>
                                 </div>
-
-                                </div>
-                            </c:forEach>
-                                <button class="ui yellow button" type="button" >ثبت نمرات</button>
+                                <button class="ui yellow button" type="submit">ثبت نمرات</button>
                             </form>
                         </div>
-
                     </div>
-                </c:if>
                 </div>
                 <!--###############################################################-->
             </div>

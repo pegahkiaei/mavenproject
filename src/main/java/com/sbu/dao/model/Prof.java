@@ -5,14 +5,13 @@
  */
 package com.sbu.dao.model;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -68,8 +67,8 @@ public class Prof implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     private Dept department;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "courseProfessor", orphanRemoval = true)
-    private List<TermCot> termCourses = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "courseProfessor", orphanRemoval = true ,fetch = FetchType.EAGER)
+    private List<TermCot> courses = new ArrayList<>();
     //-------------------------------------------------Constructor
     public Prof() {
     }
@@ -147,12 +146,12 @@ public class Prof implements Serializable {
         this.department = department;
     }
 
-    public List<TermCot> getTermCourses() {
-        return termCourses;
+    public List<TermCot> getCourses() {
+        return courses;
     }
 
-    public void setTermCourses(List<TermCot> termCourses) {
-        this.termCourses = termCourses;
+    public void setCourses(List<TermCot> termCourses) {
+        this.courses = termCourses;
     }
 
     //-------------------------------------------------Overrides

@@ -18,6 +18,9 @@ public class PKTermCot implements Serializable {
     @Column(name = "term")
     private Integer term;
 
+    @Column(name="year")
+    private Integer year;
+
 //TODO:warning!what to do with cgid and term
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "cgid")
@@ -31,6 +34,14 @@ public class PKTermCot implements Serializable {
     public PKTermCot() {
     }
 
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
 
     public Integer getCourse() {
         return course;

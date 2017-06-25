@@ -54,6 +54,7 @@ public class SttDAOImpl implements SttDAO {
     }
 
 
+
     @Transactional
     public Stt getStt(int sttId) {
         String hql= "SELECT d FROM Stt  d WHERE  d.id=:idHere";
@@ -77,7 +78,6 @@ public class SttDAOImpl implements SttDAO {
         stt.setPassword(password);
         entityManager.merge(stt);
     }//end of update Dept
-
     @Transactional
     public Stt getStt(String profId, String profPass) {
         String hql= "SELECT d FROM Stt  d WHERE d.uname=:username AND d.password=:pass";

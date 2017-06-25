@@ -37,14 +37,14 @@ $.ajax({
             msg = 'Uncaught Error.\n' + jqXHR.responseText;
         }
         $('#post').html(msg);
-    },
+    }
 
 });
 }
 
 function courseClicked (coid,term) {
 
-    alert("YEAS?!")
+    alert("YEAS?!");
     $.ajax({
         url: "/student/course_detail",
         data:{cid:coid,term:term},
@@ -54,9 +54,7 @@ function courseClicked (coid,term) {
             $('#nomre_term_body').empty();
 
             var $tbody = $("<tbody>").appendTo($("#nomre_term"));
-            $.each(responseJson, function(index,courseDetail){
                 // var color = courseDetail.protest==true ? "green":"red";
-                alert("success"+courseDetail.coname+"sssssss");
                 $("<tr class = 'detail-Result'>").appendTo($tbody)
                 // Integer coid, String coname, Integer cocredits, float grade, String stat, String courseType, boolean protest
                     .append($("<td>").text(responseJson.coid))
@@ -66,7 +64,6 @@ function courseClicked (coid,term) {
                     .append($("<td>").text(responseJson.stat))
                     .append($("<td>").text(responseJson.courseType))
                     .append($("<td>").text("<i class='large green checkmark icon'></i>"));
-            });
         },
         error: function () {
             alert("ERROR");

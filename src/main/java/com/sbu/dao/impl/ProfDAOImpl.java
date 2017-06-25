@@ -1,5 +1,6 @@
 package com.sbu.dao.impl;
 
+import com.sbu.dao.ProfDAO;
 import com.sbu.dao.model.Cot;
 import com.sbu.dao.model.Prof;
 import com.sbu.dao.model.Stt;
@@ -15,7 +16,7 @@ import java.util.List;
  * Created by lenovo on 6/22/2017.
  */
 @Repository
-public class ProfDAOImpl {
+public class ProfDAOImpl implements ProfDAO{
     public ProfDAOImpl() {
     }
 
@@ -23,7 +24,7 @@ public class ProfDAOImpl {
     public EntityManager entityManager;
 
     @Transactional
-    public Prof getProf(String uname) {
+    public Prof getProfByDeptId(String uname) {
         String hql = "SELECT p FROM  Prof p WHERE p.uname=:userName";
         Query query = entityManager.createQuery(hql);
         query.setParameter("userName",uname);
@@ -55,21 +56,14 @@ public class ProfDAOImpl {
     }
 
     @Transactional
-    public Prof getProf(int deptId) {
+    public Prof getProfByDeptId(int deptId) {
         String hql= "SELECT d FROM Prof  d WHERE  d.id=:idHere";
         Query q= entityManager.createQuery(hql);
         q.setParameter("idHere",deptId);
         List<Prof> res = (List<Prof>) q.getResultList();
         return res == null || res.size() == 0 ? null : res.get(0);
     }
-    @Transactional
-    public Prof getprof(String profId) {
-        String hql= "SELECT d FROM Prof  d WHERE d.uname=:username";
-        Query q= entityManager.createQuery(hql);
-        q.setParameter("username",profId);
-        List<Prof> res = (List<Prof>) q.getResultList();
-        return res == null || res.size() == 0 ? null : res.get(0);
-    }
+
     @Transactional
     public  void updateDept(Prof Pr,String username, String password)  {
         entityManager.clear();
@@ -79,13 +73,18 @@ public class ProfDAOImpl {
     }//end of update Dept
 
     @Transactional
-    public Prof getProf(String profId, String profPass) {
+    public Prof getProfByDeptId(String profId, String profPass) {
         String hql= "SELECT d FROM Prof  d WHERE d.uname=:username AND d.pass=:pass";
         Query q= entityManager.createQuery(hql);
         q.setParameter("username",profId);
         q.setParameter("pass",profPass);
         List<Prof> res = (List<Prof>) q.getResultList();
         return res == null || res.size() == 0 ? null : res.get(0);
+    }
+
+    @Override
+    public Prof getProf(Integer pid) {
+        return entityManager.find(Prof.class,pid);
     }
 
     @Transactional
@@ -105,6 +104,16 @@ public class ProfDAOImpl {
 
     public void setEntityManager(EntityManager entityManager) {
         this.entityManager = entityManager;
+    }
+
+    public List profCourseStudents(int year, int term, Integer coid, Integer pid)
+    {
+        String s = ""+year+term;
+        System.out.println(s);
+        return entityManager.createQuery("SELECT sc FROM StCot sc where sc.course.id=:course and sc.term=:thisterm")
+                .setParameter("course",coid)
+                .setParameter("thisterm",s)
+                .getResultList();
     }
 }
 
