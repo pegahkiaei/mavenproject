@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="088f86bd-3550-4eb4-bbd2-81d85712c4bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/controller/model/CourseDetail.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/controller/model/TermDetail.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/controller/model/TermsData.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/dao/STTDAO.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/classes/com/sbu/controller/ProfController.class" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/classes/com/sbu/controller/ProfController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/classes/com/sbu/controller/StudentController.class" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/classes/com/sbu/controller/StudentController.class" />
@@ -25,19 +21,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/sbu/service/SttManager.class" afterPath="$PROJECT_DIR$/target/classes/com/sbu/service/SttManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/sbu/service/impl/ProfManagerImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/sbu/service/impl/ProfManagerImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/sbu/service/impl/SttManagerImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/sbu/service/impl/SttManagerImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/MVCSBU_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/MVCSBU_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MVCSBU.iml" afterPath="$PROJECT_DIR$/MVCSBU.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/controller/ProfController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/controller/ProfController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/controller/StudentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/controller/StudentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/dao/impl/SttDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/dao/impl/SttDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/dao/model/StCot.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/dao/model/StCot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/service/ProfManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/service/ProfManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/service/SttManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/service/SttManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sbu/service/impl/SttManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sbu/service/impl/SttManagerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/student/studentFirstPage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/student/studentFirstPage.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/transcript.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/transcript.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/jsp/prof/profInfoEdit.jsp" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/jsp/prof/profInfoEdit.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/jsp/student/studentFirstPage.jsp" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/WEB-INF/jsp/student/studentFirstPage.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/resources/js/transcript.js" afterPath="$PROJECT_DIR$/target/MVCSBU-1.0-SNAPSHOT/resources/js/transcript.js" />
@@ -1635,7 +1619,7 @@
       <workItem from="1498298082400" duration="10463000" />
       <workItem from="1498313519863" duration="17975000" />
       <workItem from="1498340675201" duration="4606000" />
-      <workItem from="1498368133965" duration="2375000" />
+      <workItem from="1498368133965" duration="2407000" />
     </task>
     <task id="LOCAL-00001" summary="tursday4:55">
       <created>1497961817441</created>
@@ -1714,11 +1698,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498331372951</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="1:20 tuesday, filter corrected">
+      <created>1498370563612</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1498370563612</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224072000" />
+    <option name="totallyTimeSpent" value="224104000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1986,6 +1977,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2079,6 +2073,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="17" />
+          <folding>
+            <element signature="e#1488#1489#0" expanded="true" />
+            <element signature="e#1516#1517#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2109,6 +2107,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2116,6 +2115,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-15">
           <caret line="46" column="5" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#SttDAOImpl#0" expanded="false" />
+            <element signature="method#SttDAOImpl#0;class#SttDAOImpl#0" expanded="false" />
+            <element signature="e#750#759#0" expanded="false" />
+            <element signature="method#getStt#0;class#SttDAOImpl#0" expanded="false" />
+            <element signature="e#1122#1136#0" expanded="false" />
+            <element signature="method#getStudentCoursesByStId#0;class#SttDAOImpl#0" expanded="false" />
+            <element signature="method#getStudentCoursesByStIdANDterm#0;class#SttDAOImpl#0" expanded="false" />
+            <element signature="method#getStt#1;class#SttDAOImpl#0" expanded="false" />
+            <element signature="method#getStu#0;class#SttDAOImpl#0" expanded="false" />
+            <element signature="method#updateStt#0;class#SttDAOImpl#0" expanded="false" />
+            <element signature="method#getStt#2;class#SttDAOImpl#0" expanded="false" />
+            <element signature="e#3229#3230#0" expanded="true" />
+            <element signature="e#3279#3280#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
