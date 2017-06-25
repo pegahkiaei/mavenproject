@@ -103,6 +103,7 @@ public class StudentController {
         response.getWriter().flush();
     }
 
+    //RONAK
     @RequestMapping(method = RequestMethod.POST)
     public String toLogin(Model model) {
         return "student/studentLogin";
